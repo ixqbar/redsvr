@@ -2,6 +2,14 @@
   "name": "redsvr",
   "version": "1.0.1",
   "description": "Redis compatible server framework for Node",
+  "homepage": "https://github.com/jonnywang/redsvr",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonnywang/redsvr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonnywang/redsvr/issues"
+  },
   "main": "redis-server",
   "scripts": {
     "test": "DEBUG=* node redis-test.js"
