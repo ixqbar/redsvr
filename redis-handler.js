@@ -100,9 +100,10 @@ RedisSocketHandler.prototype._parseData = function () {
             redisLog(contentMatch)
             contentLen = parseInt(contentMatch[1])
 
-            //丢弃 $(内容长度)\r\n
-            this._readBytes(commandMatch[1].length + 3)
-            buf = buf.slice(commandMatch[1].length + 3)
+            //丢弃 $(内容长度)\r\n, 需要计算数值位数.
+            let skip_length = contentLen.toString().length + 2
+            this._readBytes(commandMatch[1].length + skip_length)
+            buf = buf.slice(commandMatch[1].length + skip_length)
 
             redisLog(`contentLen:${contentLen}`)
             redisLog(`buf:${buf}`)
